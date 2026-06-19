@@ -1,0 +1,255 @@
+// ---------------------------------------------------------------------------
+// Legal pagina — clean layout: hoofd-titel + sticky TOC + leesbare content
+// Geen kaarten, geen gradients, geen ruis.
+// ---------------------------------------------------------------------------
+
+html {
+    scroll-behavior: smooth;
+}
+
+.legal-head {
+    background: #fff;
+    border-bottom: 1px solid #ececec;
+    padding: 56px 0 32px;
+
+    &__container {
+        width: 80%;
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    &__kicker {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #999;
+        margin: 0 0 12px;
+        padding: 0;
+    }
+
+    &__title {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 500;
+        line-height: 1.15;
+        color: #1e2d44;
+        margin: 0 0 12px;
+        padding: 0;
+    }
+
+    &__updated {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 13px;
+        color: #888;
+        margin: 0;
+        padding: 0;
+    }
+
+    @media (max-width: 768px) {
+        padding: 32px 0 20px;
+        &__container { width: 90%; }
+    }
+}
+
+.legal-layout {
+    background: #fff;
+    padding: 40px 0 80px;
+
+    &__container {
+        width: 80%;
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 64px;
+        align-items: start;
+    }
+
+    @media (max-width: 980px) {
+        padding: 24px 0 56px;
+
+        &__container {
+            width: 90%;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+    }
+}
+
+.legal-toc {
+    position: sticky;
+    top: calc(var(--header-height) + 24px);
+    align-self: start;
+    max-height: calc(100vh - var(--header-height) - 48px);
+    overflow-y: auto;
+    padding-right: 8px;
+    font-family: 'Open Sans', Arial, sans-serif;
+
+    &__heading {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #999;
+        margin: 0 0 16px;
+        padding: 0;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-left: 1px solid #ececec;
+    }
+
+    &__item {
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+        a {
+            display: block;
+            padding: 8px 14px 8px 16px;
+            font-size: 13px;
+            line-height: 1.4;
+            color: #555;
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            margin-left: -1px;
+            transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+
+            &:hover {
+                color: #1e2d44;
+                background: #fafafa;
+            }
+        }
+
+        &--legal-part a {
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1e2d44;
+            margin-top: 18px;
+            padding-top: 12px;
+            border-top: 1px solid #ececec;
+        }
+
+        &.is-active a {
+            color: #71BF44;
+            border-left-color: #71BF44;
+            background: #fafafa;
+        }
+    }
+
+    // Hide scrollbar visually but keep it functional
+    &::-webkit-scrollbar { width: 4px; }
+    &::-webkit-scrollbar-thumb { background: #d8d8d8; border-radius: 2px; }
+
+    @media (max-width: 980px) {
+        position: relative;
+        top: auto;
+        max-height: none;
+        overflow-y: visible;
+        padding: 16px 0;
+        margin-bottom: 24px;
+        border-bottom: 1px solid #ececec;
+
+        &__list {
+            border-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0;
+        }
+
+        &__item a {
+            border-left: 0;
+            padding: 6px 12px;
+        }
+
+        &__item--legal-part a {
+            margin-top: 0;
+            border-top: 0;
+            padding-top: 6px;
+        }
+    }
+}
+
+.legal-body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+    max-width: 760px;
+
+    p {
+        margin: 0 0 1em;
+        padding: 0;
+    }
+
+    h2, .legal-section {
+        scroll-margin-top: 24px;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 22px !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+        color: #1e2d44 !important;
+        margin: 48px 0 16px !important;
+        padding: 0 0 8px !important;
+        border-bottom: 1px solid #ececec;
+        display: block;
+        background: none;
+        border-radius: 0;
+        text-transform: none;
+        letter-spacing: normal;
+
+        &::first-letter,
+        &::first-line {
+            // Leave default; the number is in the text itself.
+        }
+
+        &:first-child {
+            margin-top: 0 !important;
+        }
+    }
+
+    // Subtle accent: number prefix (anything before the first space + dot) in red.
+    // Uses ::first-letter would only style 1 char — we use a CSS hint instead:
+    h2 {
+        // Plain h2 text "1. Definities" — color the number via inline marker if desired.
+    }
+
+    h3, .legal-part {
+        scroll-margin-top: 24px;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #999 !important;
+        margin: 56px 0 8px !important;
+        padding: 0 0 6px !important;
+        border: 0;
+        background: none;
+        border-radius: 0;
+        line-height: 1.3 !important;
+    }
+
+    .legal-num,
+    .legal-section__num {
+        color: #71BF44;
+        font-weight: 700;
+        margin-right: 4px;
+        display: inline;
+        background: none;
+        padding: 0;
+        border-radius: 0;
+        font-size: inherit;
+    }
+
+    .legal-section__title {
+        display: inline;
+    }
+}

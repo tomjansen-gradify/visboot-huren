@@ -1,0 +1,38 @@
+{
+    "key": "group_page_header_block",
+    "title": "Page header block",
+    "fields": [
+        {
+            "key": "field_page_header_kicker",
+            "label": "Kicker (klein label boven titel)",
+            "name": "kicker",
+            "type": "text",
+            "placeholder": "VISBOOT-HUREN.NL"
+        },
+        {
+            "key": "field_page_header_title",
+            "label": "Titel",
+            "name": "title",
+            "type": "text",
+            "instructions": "Leeg = paginatitel wordt gebruikt."
+        },
+        {
+            "key": "field_page_header_subtitle",
+            "label": "Subtitel (optioneel)",
+            "name": "subtitle",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": ""
+        }
+    ],
+    "location": [[{"param": "block", "operator": "==", "value": "acf/page-header-block"}]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Velden voor het Page header block",
+    "show_in_rest": 0,
+    "modified": 1750000000
+}

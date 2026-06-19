@@ -1,0 +1,412 @@
+{
+    "key": "group_site_settings",
+    "title": "Site Instellingen",
+    "fields": [
+        {
+            "key": "field_settings_contact_tab",
+            "label": "Contact",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_settings_email",
+            "label": "E-mailadres",
+            "name": "contact_email",
+            "type": "email",
+            "instructions": "Gebruikt in header, CTA blokken en footer.",
+            "default_value": "info@visboot-huren.nl"
+        },
+        {
+            "key": "field_settings_phone",
+            "label": "Telefoonnummer (weergave)",
+            "name": "contact_phone",
+            "type": "text",
+            "default_value": "+31 6 19709015"
+        },
+        {
+            "key": "field_settings_phone_link",
+            "label": "Telefoonnummer (link)",
+            "name": "contact_phone_link",
+            "type": "text",
+            "default_value": "+31619709015"
+        },
+        {
+            "key": "field_settings_address",
+            "label": "Adres / locatie",
+            "name": "contact_address",
+            "type": "textarea",
+            "default_value": "Eiland van Maurik\nAfhalen op trailer (Tiel)",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_settings_address_link",
+            "label": "Maps link (optioneel)",
+            "name": "contact_address_link",
+            "type": "url"
+        },
+        {
+            "key": "field_settings_social_tab",
+            "label": "Social media",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_settings_social_facebook",
+            "label": "Facebook URL",
+            "name": "social_facebook",
+            "type": "url",
+            "instructions": "Volledige URL naar de Facebook-pagina (laat leeg om te verbergen)."
+        },
+        {
+            "key": "field_settings_social_instagram",
+            "label": "Instagram URL",
+            "name": "social_instagram",
+            "type": "url",
+            "instructions": "Volledige URL naar het Instagram-profiel (laat leeg om te verbergen)."
+        },
+        {
+            "key": "field_settings_social_linkedin",
+            "label": "LinkedIn URL",
+            "name": "social_linkedin",
+            "type": "url",
+            "instructions": "Volledige URL naar het LinkedIn-profiel (laat leeg om te verbergen)."
+        },
+        {
+            "key": "field_settings_finance_email",
+            "label": "Finance e-mail (betalingen/Mollie)",
+            "name": "finance_email",
+            "type": "email",
+            "instructions": "Hier komen Mollie-bevestigingen en betalingsmails binnen. Leeg = contact e-mail wordt gebruikt.",
+            "placeholder": "finance@visboot-huren.nl"
+        },
+        {
+            "key": "field_settings_cta_tab",
+            "label": "CTA",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_settings_cta_default_title",
+            "label": "Standaard CTA titel",
+            "name": "cta_default_title",
+            "type": "text",
+            "default_value": "Ook genieten op het water?"
+        },
+        {
+            "key": "field_settings_footer_tab",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_settings_footer_intro",
+            "label": "Intro tekst (optioneel)",
+            "name": "footer_intro",
+            "type": "textarea",
+            "instructions": "Korte tekst boven de footer-links (bv. tagline).",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_settings_footer_bg_image",
+            "label": "Achtergrond afbeelding (optioneel)",
+            "name": "footer_bg_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_settings_footer_bg_color",
+            "label": "Achtergrond kleur",
+            "name": "footer_bg_color",
+            "type": "color_picker",
+            "default_value": "#1e2d44"
+        },
+        {
+            "key": "field_settings_footer_copyright",
+            "label": "Copyright tekst",
+            "name": "footer_copyright",
+            "type": "text",
+            "instructions": "Gebruik {year} voor het huidige jaar.",
+            "default_value": "© {year} Visboot-huren.nl"
+        },
+        {
+            "key": "field_settings_footer_links_message",
+            "label": "Links in footer",
+            "name": "",
+            "type": "message",
+            "message": "De links onderin de footer beheer je via <a href=\"/wp-admin/nav-menus.php\" target=\"_blank\">Weergave → Menu's</a> en koppel je aan locatie <strong>Footer onder</strong>.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_settings_privacy_tab",
+            "label": "Privacy / AVG",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_settings_data_retention_days",
+            "label": "Bewaartermijn persoonsgegevens (dagen)",
+            "name": "data_retention_days",
+            "type": "number",
+            "instructions": "Na deze termijn worden naam, adres, telefoon en e-mail van boekingen automatisch geanonimiseerd. Boot, datums en bedrag blijven bewaard voor de boekhouding (wettelijke 7 jaar).",
+            "default_value": 90,
+            "min": 30,
+            "step": 1
+        },
+        {
+            "key": "field_settings_mollie_tab",
+            "label": "Mollie",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_settings_mollie_disabled",
+            "label": "Mollie tijdelijk uitschakelen",
+            "name": "mollie_disabled",
+            "type": "true_false",
+            "instructions": "Aan = alle boekingen worden behandeld als 'aanvraag versturen' (geen online betaling, alleen mail). Handig voor onderhoud of als Mollie nog niet live is.",
+            "ui": 1,
+            "default_value": 0
+        },
+        {
+            "key": "field_settings_mollie_mode",
+            "label": "Modus",
+            "name": "mollie_mode",
+            "type": "select",
+            "choices": {
+                "test": "Test",
+                "live": "Live"
+            },
+            "default_value": "test",
+            "return_format": "value",
+            "ui": 1
+        },
+        {
+            "key": "field_settings_mollie_test_key",
+            "label": "Mollie Test API key",
+            "name": "mollie_test_key",
+            "type": "password",
+            "instructions": "Begint met test_..."
+        },
+        {
+            "key": "field_settings_mollie_live_key",
+            "label": "Mollie Live API key",
+            "name": "mollie_live_key",
+            "type": "password",
+            "instructions": "Begint met live_..."
+        },
+        {
+            "key": "field_settings_mollie_methods",
+            "label": "Toegestane betaalmethodes (optioneel)",
+            "name": "mollie_methods",
+            "type": "checkbox",
+            "choices": {
+                "ideal": "iDEAL",
+                "creditcard": "Creditcard",
+                "bancontact": "Bancontact",
+                "paypal": "PayPal",
+                "applepay": "Apple Pay",
+                "banktransfer": "Bankoverschrijving"
+            },
+            "instructions": "Niets selecteren = Mollie kiest zelf welke beschikbaar zijn.",
+            "return_format": "value"
+        },
+        {
+            "key": "field_settings_rental_tab",
+            "label": "Verhuur",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_settings_rental_season_start",
+            "label": "Verhuurseizoen begint op",
+            "name": "rental_season_start",
+            "type": "date_picker",
+            "instructions": "Vóór deze datum is boeken niet mogelijk.",
+            "display_format": "j F Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_settings_rental_season_end",
+            "label": "Verhuurseizoen eindigt op",
+            "name": "rental_season_end",
+            "type": "date_picker",
+            "display_format": "j F Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_settings_rental_weekdays",
+            "label": "Dagen waarop gehuurd kan worden",
+            "name": "rental_weekdays",
+            "type": "checkbox",
+            "choices": {
+                "1": "Maandag",
+                "2": "Dinsdag",
+                "3": "Woensdag",
+                "4": "Donderdag",
+                "5": "Vrijdag",
+                "6": "Zaterdag",
+                "0": "Zondag"
+            },
+            "default_value": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "0"
+            ],
+            "return_format": "value"
+        },
+        {
+            "key": "field_settings_time_slots",
+            "label": "Tijdsblokken",
+            "name": "time_slots",
+            "type": "repeater",
+            "instructions": "Worden in stap 1 getoond na een datum selectie.",
+            "min": 1,
+            "layout": "table",
+            "button_label": "Tijdsblok toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_settings_slot_id",
+                    "label": "ID",
+                    "name": "id",
+                    "type": "text",
+                    "required": 1,
+                    "placeholder": "morning"
+                },
+                {
+                    "key": "field_settings_slot_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "required": 1,
+                    "placeholder": "Ochtend"
+                },
+                {
+                    "key": "field_settings_slot_start",
+                    "label": "Begint",
+                    "name": "start",
+                    "type": "text",
+                    "placeholder": "08:00"
+                },
+                {
+                    "key": "field_settings_slot_end",
+                    "label": "Eindigt",
+                    "name": "end",
+                    "type": "text",
+                    "placeholder": "13:00"
+                },
+                {
+                    "key": "field_settings_slot_default_price",
+                    "label": "Default prijs (€)",
+                    "name": "default_price",
+                    "type": "number",
+                    "step": "0.01",
+                    "min": 0
+                }
+            ]
+        },
+        {
+            "key": "field_settings_default_extras",
+            "label": "Standaard extra opties",
+            "name": "default_extras",
+            "type": "repeater",
+            "instructions": "Worden getoond in stap 2. Per boot overschrijfbaar.",
+            "min": 0,
+            "layout": "table",
+            "button_label": "Extra toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_settings_extra_label",
+                    "label": "Naam",
+                    "name": "label",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_settings_extra_price",
+                    "label": "Prijs (€)",
+                    "name": "price",
+                    "type": "number",
+                    "step": "0.01",
+                    "min": 0
+                },
+                {
+                    "key": "field_settings_extra_type",
+                    "label": "Type",
+                    "name": "type",
+                    "type": "select",
+                    "choices": {"check": "Aanvinken (ja/nee)", "quantity": "Aantal (0, 1, 2, ...)"},
+                    "default_value": "check",
+                    "return_format": "value",
+                    "allow_null": 0
+                },
+                {
+                    "key": "field_settings_extra_description",
+                    "label": "Omschrijving (optioneel)",
+                    "name": "description",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_settings_global_closed_dates",
+            "label": "Globaal gesloten dagen",
+            "name": "global_closed_dates",
+            "type": "repeater",
+            "instructions": "Op deze dagen wordt er nergens verhuurd (bv. feestdagen).",
+            "layout": "table",
+            "button_label": "Datum toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_settings_closed_date",
+                    "label": "Datum",
+                    "name": "date",
+                    "type": "date_picker",
+                    "required": 1,
+                    "display_format": "j F Y",
+                    "return_format": "Y-m-d",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_settings_closed_reason",
+                    "label": "Reden (optioneel)",
+                    "name": "reason",
+                    "type": "text"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "site-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1750000000
+}

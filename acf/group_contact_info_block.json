@@ -1,0 +1,18 @@
+{
+    "key": "group_contact_info_block",
+    "title": "Contact info block",
+    "fields": [
+        {
+            "key": "field_contact_info_message",
+            "label": "Bron",
+            "name": "",
+            "type": "message",
+            "message": "De gegevens (e-mail, locatie, telefoon) komen uit Site Instellingen → Contact. Wijzig daar één keer, geldt overal.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [[{"param": "block", "operator": "==", "value": "acf/contact-info-block"}]],
+    "menu_order": 0, "position": "normal", "style": "default",
+    "active": true, "show_in_rest": 0, "modified": 1750000000
+}

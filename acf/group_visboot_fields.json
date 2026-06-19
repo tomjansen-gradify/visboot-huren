@@ -1,0 +1,403 @@
+{
+    "key": "group_visboot_fields",
+    "title": "Visboot details",
+    "fields": [
+        {
+            "key": "field_visboot_card_tab",
+            "label": "Overzichtskaart",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_visboot_card_description",
+            "label": "Korte omschrijving (kaart)",
+            "name": "card_description",
+            "type": "textarea",
+            "instructions": "Wordt getoond op het bootkaartje op de homepage en de /visboten/-pagina. 1-2 zinnen, max ~30 woorden.",
+            "rows": 3,
+            "new_lines": "br",
+            "maxlength": 240
+        },
+        {
+            "key": "field_visboot_header_tab",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_visboot_header_image",
+            "label": "Header afbeelding",
+            "name": "header_image",
+            "type": "image",
+            "instructions": "Achtergrond voor de hero bovenaan de boot pagina. Leeg = uitgelichte afbeelding wordt gebruikt.",
+            "required": 0,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_visboot_header_subtitle",
+            "label": "Hero subtitel (optioneel)",
+            "name": "header_subtitle",
+            "type": "text"
+        },
+        {
+            "key": "field_visboot_header_cta_label",
+            "label": "Hero knop tekst",
+            "name": "header_cta_label",
+            "type": "text",
+            "instructions": "Leeg = 'Bekijk beschikbaarheid' (standaard).",
+            "placeholder": "Bekijk beschikbaarheid"
+        },
+        {
+            "key": "field_visboot_header_cta_link",
+            "label": "Hero knop link",
+            "name": "header_cta_link",
+            "type": "url",
+            "instructions": "Leeg = #boekingsformulier op deze pagina.",
+            "placeholder": "#boekingsformulier"
+        },
+
+        {
+            "key": "field_visboot_usp_tab",
+            "label": "USP kaarten",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_visboot_specs",
+            "label": "USP kaarten",
+            "name": "specs",
+            "type": "repeater",
+            "instructions": "Worden als kaarten over de hero getoond (zoals op de homepage).",
+            "min": 0,
+            "max": 6,
+            "layout": "table",
+            "button_label": "Kaart toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_visboot_spec_icon",
+                    "label": "Icoon (FA class)",
+                    "name": "icon",
+                    "type": "text",
+                    "placeholder": "fa-solid fa-tag"
+                },
+                {
+                    "key": "field_visboot_spec_primary",
+                    "label": "Hoofdtekst",
+                    "name": "primary",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_visboot_spec_secondary",
+                    "label": "Subtekst",
+                    "name": "secondary",
+                    "type": "text"
+                }
+            ]
+        },
+
+        {
+            "key": "field_visboot_gallery_tab",
+            "label": "Foto's",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_visboot_gallery",
+            "label": "Foto galerij",
+            "name": "gallery",
+            "type": "gallery",
+            "instructions": "Upload meerdere foto's van de boot. Worden in een grid getoond.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min": 0,
+            "max": 30,
+            "insert": "append"
+        },
+
+        {
+            "key": "field_visboot_details_tab",
+            "label": "Specs & uitrusting",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_visboot_specifications",
+            "label": "Specificaties",
+            "name": "specifications",
+            "type": "repeater",
+            "instructions": "Technische specs als label + waarde paren.",
+            "min": 0,
+            "max": 20,
+            "layout": "table",
+            "button_label": "Specificatie toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_visboot_specification_icon",
+                    "label": "Icoon (FA class, optioneel)",
+                    "name": "icon",
+                    "type": "text",
+                    "placeholder": "fa-solid fa-ruler-combined"
+                },
+                {
+                    "key": "field_visboot_specification_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "required": 1,
+                    "placeholder": "Afmetingen"
+                },
+                {
+                    "key": "field_visboot_specification_value",
+                    "label": "Waarde",
+                    "name": "value",
+                    "type": "text",
+                    "required": 1,
+                    "placeholder": "4.54 x 1.92 m"
+                }
+            ]
+        },
+        {
+            "key": "field_visboot_features",
+            "label": "Uitrusting / features",
+            "name": "features",
+            "type": "repeater",
+            "instructions": "Items die aan boord aanwezig zijn — worden als pills/badges getoond.",
+            "min": 0,
+            "max": 40,
+            "layout": "table",
+            "button_label": "Feature toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_visboot_feature_icon",
+                    "label": "Icoon (FA class, optioneel)",
+                    "name": "icon",
+                    "type": "text",
+                    "placeholder": "fa-solid fa-check"
+                },
+                {
+                    "key": "field_visboot_feature_text",
+                    "label": "Tekst",
+                    "name": "text",
+                    "type": "text",
+                    "required": 1
+                }
+            ]
+        },
+
+        {
+            "key": "field_visboot_booking_tab",
+            "label": "Boeking",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_visboot_bookable",
+            "label": "Boekbaar",
+            "name": "bookable",
+            "type": "true_false",
+            "instructions": "Zet uit om de booking wizard te verbergen voor deze boot.",
+            "ui": 1,
+            "default_value": 1
+        },
+        {
+            "key": "field_visboot_license_required",
+            "label": "Vaarbewijs vereist",
+            "name": "license_required",
+            "type": "true_false",
+            "instructions": "Aan = vaarbewijs vereist (zonder Livescope optie in de wizard). Uit = vaarbewijsvrij (Livescope is beschikbaar).",
+            "ui": 1,
+            "default_value": 0
+        },
+        {
+            "key": "field_visboot_tiered_prices",
+            "label": "Prijzen per dag (staffel)",
+            "name": "tiered_prices",
+            "type": "repeater",
+            "instructions": "Vul je staffel in: vanaf X dagen geldt prijs Y per dag. Bij meerdere dagen wordt automatisch de juiste tier gepakt.",
+            "min": 1,
+            "layout": "table",
+            "button_label": "Tier toevoegen",
+            "sub_fields": [
+                {"key": "field_visboot_tier_min_days", "label": "Vanaf (dagen)", "name": "min_days", "type": "number", "required": 1, "min": 1, "step": 1, "default_value": 1},
+                {"key": "field_visboot_tier_price", "label": "Prijs per dag (€)", "name": "price", "type": "number", "required": 1, "step": "0.01", "min": 0},
+                {"key": "field_visboot_tier_label", "label": "Label (optioneel)", "name": "label", "type": "text", "placeholder": "1 dag / 3+ dagen / 7+ dagen"}
+            ]
+        },
+        {
+            "key": "field_visboot_deposit_amount",
+            "label": "Borg bedrag (€)",
+            "name": "deposit_amount",
+            "type": "number",
+            "instructions": "Wordt opgeteld bij online betaling, of cash op locatie volgens keuze klant.",
+            "default_value": 150,
+            "step": "0.01",
+            "min": 0
+        },
+        {
+            "key": "field_visboot_prices",
+            "label": "Legacy prijzen per tijdsblok (deprecated)",
+            "name": "prices",
+            "type": "repeater",
+            "instructions": "Niet meer gebruikt — laat leeg, prijzen komen uit Staffel hierboven.",
+            "layout": "table",
+            "button_label": "Prijs toevoegen",
+            "sub_fields": [
+                {"key": "field_visboot_price_slot", "label": "Tijdsblok ID", "name": "slot_id", "type": "text"},
+                {"key": "field_visboot_price_amount", "label": "Prijs (€)", "name": "amount", "type": "number", "step": "0.01", "min": 0}
+            ]
+        },
+        {
+            "key": "field_visboot_closed_dates",
+            "label": "Specifieke gesloten dagen voor deze boot",
+            "name": "closed_dates",
+            "type": "repeater",
+            "instructions": "Globaal gesloten dagen gelden automatisch — hier kan je specifiek voor déze boot extra dagen blokkeren.",
+            "layout": "table",
+            "button_label": "Datum blokkeren",
+            "sub_fields": [
+                {"key": "field_visboot_closed_date", "label": "Datum", "name": "date", "type": "date_picker", "required": 1, "display_format": "j F Y", "return_format": "Y-m-d", "first_day": 1},
+                {"key": "field_visboot_closed_reason", "label": "Reden (optioneel)", "name": "reason", "type": "text"}
+            ]
+        },
+        {
+            "key": "field_visboot_extras_override",
+            "label": "Eigen extra opties (overschrijft globaal)",
+            "name": "extras",
+            "type": "repeater",
+            "instructions": "Leeg laten = globale extra's uit Site Instellingen worden gebruikt.",
+            "layout": "table",
+            "button_label": "Extra toevoegen",
+            "sub_fields": [
+                {"key": "field_visboot_extra_label", "label": "Naam", "name": "label", "type": "text", "required": 1},
+                {"key": "field_visboot_extra_price", "label": "Prijs (€)", "name": "price", "type": "number", "step": "0.01", "min": 0},
+                {"key": "field_visboot_extra_type", "label": "Type", "name": "type", "type": "select", "choices": {"check": "Aanvinken (ja/nee)", "quantity": "Aantal (0, 1, 2, ...)"}, "default_value": "check", "return_format": "value", "allow_null": 0},
+                {"key": "field_visboot_extra_description", "label": "Omschrijving", "name": "description", "type": "text"}
+            ]
+        },
+        {
+            "key": "field_visboot_season_start",
+            "label": "Eigen seizoen begin (optioneel)",
+            "name": "rental_season_start",
+            "type": "date_picker",
+            "instructions": "Leeg = globaal seizoen uit Site Instellingen.",
+            "display_format": "j F Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_visboot_season_end",
+            "label": "Eigen seizoen einde (optioneel)",
+            "name": "rental_season_end",
+            "type": "date_picker",
+            "display_format": "j F Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        },
+        {
+            "key": "field_visboot_weekdays",
+            "label": "Eigen verhuurdagen (optioneel)",
+            "name": "rental_weekdays",
+            "type": "checkbox",
+            "instructions": "Niets aanvinken = globale dagen uit Site Instellingen.",
+            "choices": {
+                "1": "Maandag", "2": "Dinsdag", "3": "Woensdag", "4": "Donderdag",
+                "5": "Vrijdag", "6": "Zaterdag", "0": "Zondag"
+            },
+            "return_format": "value"
+        },
+        {
+            "key": "field_visboot_time_slots_override",
+            "label": "Eigen tijdsblokken (optioneel, overschrijft globaal)",
+            "name": "time_slots",
+            "type": "repeater",
+            "instructions": "Leeg laten = globale tijdsblokken worden gebruikt.",
+            "layout": "table",
+            "button_label": "Tijdsblok toevoegen",
+            "sub_fields": [
+                {"key": "field_visboot_slot_id", "label": "ID", "name": "id", "type": "text", "required": 1, "placeholder": "morning"},
+                {"key": "field_visboot_slot_label", "label": "Label", "name": "label", "type": "text", "required": 1},
+                {"key": "field_visboot_slot_start", "label": "Begint", "name": "start", "type": "text", "placeholder": "08:00"},
+                {"key": "field_visboot_slot_end", "label": "Eindigt", "name": "end", "type": "text", "placeholder": "13:00"},
+                {"key": "field_visboot_slot_price", "label": "Prijs (€)", "name": "default_price", "type": "number", "step": "0.01", "min": 0}
+            ]
+        },
+        {
+            "key": "field_visboot_mollie_methods",
+            "label": "Eigen betaalmethodes voor deze boot (optioneel)",
+            "name": "mollie_methods",
+            "type": "checkbox",
+            "instructions": "Niets aanvinken = globale Mollie instelling.",
+            "choices": {
+                "ideal": "iDEAL", "creditcard": "Creditcard", "bancontact": "Bancontact",
+                "paypal": "PayPal", "applepay": "Apple Pay", "banktransfer": "Bankoverschrijving"
+            },
+            "return_format": "value"
+        },
+
+        {
+            "key": "field_visboot_faq_tab",
+            "label": "FAQ",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_visboot_faqs",
+            "label": "Veelgestelde vragen",
+            "name": "faqs",
+            "type": "repeater",
+            "instructions": "Worden als accordion getoond.",
+            "min": 0,
+            "max": 30,
+            "layout": "block",
+            "button_label": "Vraag toevoegen",
+            "sub_fields": [
+                {
+                    "key": "field_visboot_faq_question",
+                    "label": "Vraag",
+                    "name": "question",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_visboot_faq_answer",
+                    "label": "Antwoord",
+                    "name": "answer",
+                    "type": "wysiwyg",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "visboot"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Velden voor visboot detail pagina's",
+    "show_in_rest": 0,
+    "modified": 1781557786
+}

@@ -1,0 +1,51 @@
+// ---------------------------------------------------------------------------
+// Page header block — clean koptekst voor pagina's (over ons, etc.)
+// ---------------------------------------------------------------------------
+
+.page-header-block {
+    background: #fff;
+    border-bottom: 1px solid #ececec;
+    padding: 56px 0 32px;
+
+    &__container {
+        width: 80%;
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    &__kicker {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #999;
+        margin: 0 0 12px;
+        padding: 0;
+    }
+
+    &__title {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 500;
+        line-height: 1.15;
+        color: #1e2d44;
+        margin: 0 0 12px;
+        padding: 0;
+    }
+
+    &__subtitle {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 16px;
+        color: #6b7280;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        max-width: 640px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 36px 0 24px;
+        &__container { width: 90%; }
+    }
+}

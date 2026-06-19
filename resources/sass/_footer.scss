@@ -1,0 +1,103 @@
+// ---------------------------------------------------------------------------
+// Site footer — donker, met optionele bg-image, editable copyright + menu
+// ---------------------------------------------------------------------------
+
+.site-footer {
+    color: #fff;
+    background-color: #1e2d44;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 0;
+
+    &__container {
+        width: 90%;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
+    &__intro {
+        padding: 40px 0 24px;
+
+        p {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.88);
+            line-height: 1.5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &__bottom {
+        padding: 40px 0 32px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.15);
+    }
+
+    &__bottom &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+
+    &__menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__menu-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #fff;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: opacity 0.15s ease;
+
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+    }
+
+    &__part-of {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 14px;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    &__copyright {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    @media (max-width: 600px) {
+        margin-top: 56px;
+
+        &__bottom { padding: 32px 0 28px; }
+    }
+}

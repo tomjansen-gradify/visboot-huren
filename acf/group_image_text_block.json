@@ -1,0 +1,65 @@
+{
+    "key": "group_image_text_block",
+    "title": "Image + text block",
+    "fields": [
+        {
+            "key": "field_image_text_image",
+            "label": "Afbeelding",
+            "name": "image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_image_text_position",
+            "label": "Positie afbeelding",
+            "name": "image_position",
+            "type": "select",
+            "choices": {"left": "Links", "right": "Rechts"},
+            "default_value": "left",
+            "return_format": "value",
+            "ui": 1
+        },
+        {
+            "key": "field_image_text_heading",
+            "label": "Titel",
+            "name": "heading",
+            "type": "text"
+        },
+        {
+            "key": "field_image_text_subheading",
+            "label": "Subtitel (klein, boven body)",
+            "name": "subheading",
+            "type": "text"
+        },
+        {
+            "key": "field_image_text_content",
+            "label": "Tekst",
+            "name": "content",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_image_text_lines",
+            "label": "Toon groene accent lijnen",
+            "name": "show_accent_lines",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 1
+        }
+    ],
+    "location": [[{"param": "block", "operator": "==", "value": "acf/image-text-block"}]],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Velden voor het Image + text block",
+    "show_in_rest": 0,
+    "modified": 1750000000
+}

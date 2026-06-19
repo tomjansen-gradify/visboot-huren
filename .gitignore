@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build artifacts
+public/mix-manifest.json
+.cache/
+
+# Editor/OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.local

@@ -1,0 +1,50 @@
+{
+    "key": "group_text_block",
+    "title": "Text block",
+    "fields": [
+        {
+            "key": "field_text_block_content",
+            "label": "Tekst",
+            "name": "content",
+            "type": "wysiwyg",
+            "instructions": "Vrije tekst met opmaak (kopjes, vet, links, lijsten).",
+            "required": 0,
+            "tabs": "visual",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_text_block_align",
+            "label": "Uitlijning",
+            "name": "align",
+            "type": "select",
+            "choices": {
+                "left": "Links",
+                "center": "Gecentreerd"
+            },
+            "default_value": "left",
+            "return_format": "value",
+            "allow_null": 0,
+            "ui": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/text-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Velden voor het Text block",
+    "show_in_rest": 0,
+    "modified": 1750000000
+}

@@ -1,0 +1,87 @@
+{
+    "key": "group_cta_block",
+    "title": "CTA block",
+    "fields": [
+        {
+            "key": "field_cta_title",
+            "label": "Titel",
+            "name": "title",
+            "type": "text",
+            "instructions": "Leeg laten = standaard titel uit Site Instellingen.",
+            "placeholder": "Ook genieten op het water?"
+        },
+        {
+            "key": "field_cta_subtitle",
+            "label": "Subtitel (optioneel)",
+            "name": "subtitle",
+            "type": "text"
+        },
+        {
+            "key": "field_cta_bg_color",
+            "label": "Achtergrond kleur",
+            "name": "background_color",
+            "type": "color_picker",
+            "default_value": "#1e2d44"
+        },
+        {
+            "key": "field_cta_bg_image",
+            "label": "Achtergrond afbeelding (optioneel)",
+            "name": "background_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_cta_info_message",
+            "label": "Contactgegevens",
+            "name": "",
+            "type": "message",
+            "message": "De getoonde e-mail, telefoon en adres komen uit Site Instellingen → Contactgegevens. Wijzig daar één keer, geldt overal.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_cta_show_form",
+            "label": "Toon contactformulier onder de kaarten",
+            "name": "show_form",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 0
+        },
+        {
+            "key": "field_cta_form_title",
+            "label": "Formulier titel",
+            "name": "form_title",
+            "type": "text",
+            "default_value": "Neem contact met ons op",
+            "conditional_logic": [[{"field": "field_cta_show_form", "operator": "==", "value": "1"}]]
+        },
+        {
+            "key": "field_cta_form_email_to",
+            "label": "Formulier versturen naar",
+            "name": "form_email_to",
+            "type": "email",
+            "instructions": "Leeg = contact e-mail uit Site Instellingen wordt gebruikt.",
+            "conditional_logic": [[{"field": "field_cta_show_form", "operator": "==", "value": "1"}]]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/cta-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Velden voor het CTA block. Contactgegevens komen uit Site Instellingen.",
+    "show_in_rest": 0,
+    "modified": 1750000000
+}

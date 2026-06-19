@@ -1,0 +1,48 @@
+{
+    "key": "group_boat_listing_block",
+    "title": "Boat listing block",
+    "fields": [
+        {
+            "key": "field_boat_listing_title",
+            "label": "Sectie titel",
+            "name": "section_title",
+            "type": "text",
+            "default_value": "Actuele aanbod visboten:"
+        },
+        {
+            "key": "field_boat_listing_limit",
+            "label": "Aantal tonen",
+            "name": "limit",
+            "type": "number",
+            "instructions": "0 of leeg = alle gepubliceerde visboten.",
+            "default_value": 0,
+            "min": 0,
+            "step": 1
+        },
+        {
+            "key": "field_boat_listing_cta_label",
+            "label": "Knop tekst per kaart",
+            "name": "cta_label",
+            "type": "text",
+            "default_value": "Bekijk beschikbaarheid"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/boat-listing-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Velden voor het Boat listing block",
+    "show_in_rest": 0,
+    "modified": 1750000000
+}

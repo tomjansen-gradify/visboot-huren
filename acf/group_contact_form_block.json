@@ -1,0 +1,15 @@
+{
+    "key": "group_contact_form_block",
+    "title": "Contact form block",
+    "fields": [
+        {"key": "field_contact_title", "label": "Titel", "name": "title", "type": "text", "default_value": "Plan jouw proefvaart"},
+        {"key": "field_contact_intro", "label": "Intro (optioneel)", "name": "intro", "type": "textarea", "rows": 2, "new_lines": ""},
+        {"key": "field_contact_submit_label", "label": "Knop tekst", "name": "submit_label", "type": "text", "default_value": "Versturen"},
+        {"key": "field_contact_success_message", "label": "Bevestigingsbericht", "name": "success_message", "type": "text", "default_value": "Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op."},
+        {"key": "field_contact_email_to", "label": "Bericht versturen naar", "name": "email_to", "type": "email", "instructions": "Leeg = contact e-mail uit Site Instellingen wordt gebruikt."}
+    ],
+    "location": [[{"param": "block", "operator": "==", "value": "acf/contact-form-block"}]],
+    "menu_order": 0, "position": "normal", "style": "default",
+    "label_placement": "top", "instruction_placement": "label",
+    "active": true, "show_in_rest": 0, "modified": 1750000000
+}

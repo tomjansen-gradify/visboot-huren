@@ -1,0 +1,326 @@
+// ---------------------------------------------------------------------------
+// Visboot detail sections — gallery, specs, features, FAQ
+// ---------------------------------------------------------------------------
+
+$vb-text:   #3E3E3F;
+$vb-dark:   #1e2d44;
+$vb-accent: #71BF44;
+$vb-line:   #ececec;
+
+// -- Gallery ----------------------------------------------------------------
+.visboot-gallery {
+    background: #fff;
+    padding: 0 0 var(--pad-section);
+
+    &__container {
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        color: $vb-dark;
+        margin: 0 0 24px;
+        padding: 0;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__link {
+        display: block;
+        line-height: 0;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.18);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -12px rgba(0, 0, 0, 0.28);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 8px 0 40px;
+        &__container { width: 90%; }
+        &__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    }
+
+    @media (max-width: 480px) {
+        &__grid { grid-template-columns: 1fr; }
+    }
+}
+
+// -- Specs + features stacked ----------------------------------------------
+.visboot-details {
+    background: #fafafa;
+    padding: var(--pad-section) 0;
+
+    &__container {
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: start;
+    }
+
+    &__panel {
+        background: #fff;
+        border: 1px solid $vb-line;
+        border-radius: 8px;
+        padding: 28px 28px 32px;
+    }
+
+    &__title {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: $vb-dark;
+        margin: 0 0 20px;
+        padding: 0 0 12px;
+        border-bottom: 2px solid $vb-accent;
+        display: inline-block;
+    }
+
+    @media (max-width: 768px) {
+        padding: var(--pad-section) 0;
+        &__container { width: 90%; }
+        &__grid { grid-template-columns: 1fr; gap: 24px; }
+        &__panel { padding: 24px 20px 28px; }
+    }
+}
+
+.visboot-specs {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    &__row {
+        display: grid;
+        grid-template-columns: 32px 1fr auto;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 0;
+        border-bottom: 1px solid $vb-line;
+        margin: 0;
+
+        &:last-child { border-bottom: 0; }
+    }
+
+    &__icon {
+        color: $vb-accent;
+        font-size: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__label {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #6b6b6b;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__value {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: $vb-dark;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+    }
+}
+
+.visboot-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    &__item {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        background: #f5f7fa;
+        border: 1px solid #e3e8ef;
+        border-radius: 999px;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: $vb-dark;
+    }
+
+    &__icon {
+        color: #71BF44;
+        font-size: 12px;
+        display: inline-flex;
+    }
+
+    &__text {
+        display: inline-block;
+    }
+}
+
+// -- FAQ accordion ----------------------------------------------------------
+.visboot-faq {
+    background: #fff;
+    padding: var(--pad-section) 0;
+
+    &__container {
+        width: 80%;
+        max-width: 880px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 26px;
+        font-weight: 500;
+        color: $vb-dark;
+        margin: 0 0 24px;
+        padding: 0;
+        text-align: center;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__item {
+        background: #fff;
+        border: 1px solid $vb-line;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+        &:hover {
+            border-color: #d8d8d8;
+        }
+
+        &.is-open {
+            border-color: $vb-accent;
+            box-shadow: 0 8px 22px -12px rgba(113, 191, 68, 0.25);
+        }
+    }
+
+    &__question {
+        all: unset;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px 24px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: $vb-dark;
+        line-height: 1.4;
+
+        &:focus-visible {
+            outline: 2px solid $vb-accent;
+            outline-offset: -2px;
+        }
+    }
+
+    &__question-text {
+        flex: 1;
+    }
+
+    &__chevron {
+        flex-shrink: 0;
+        color: $vb-accent;
+        font-size: 14px;
+        transition: transform 0.2s ease;
+    }
+
+    &__question[aria-expanded="true"] &__chevron,
+    &__item.is-open &__chevron {
+        transform: rotate(180deg);
+    }
+
+    &__answer {
+        &[hidden] { display: none; }
+    }
+
+    &__answer-inner {
+        padding: 0 24px 22px;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.7;
+        color: #4a4a4a;
+        border-top: 1px solid $vb-line;
+        padding-top: 16px;
+
+        p {
+            margin: 0 0 0.7em;
+            &:last-child { margin-bottom: 0; }
+        }
+
+        a {
+            color: $vb-accent;
+            text-decoration: underline;
+            &:hover { text-decoration: none; }
+        }
+
+        ul, ol {
+            margin: 0 0 0.7em;
+            padding-left: 1.2em;
+        }
+        ul { list-style: disc; }
+        ol { list-style: decimal; }
+    }
+
+    @media (max-width: 768px) {
+        padding: 40px 0 56px;
+        &__container { width: 90%; }
+        &__question { padding: 14px 18px; font-size: 15px; }
+        &__answer-inner { padding-left: 18px; padding-right: 18px; }
+    }
+}

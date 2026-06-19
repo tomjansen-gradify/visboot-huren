@@ -1,0 +1,119 @@
+{
+    "key": "group_booking_fields",
+    "title": "Boeking details",
+    "fields": [
+        {"key": "field_booking_status_tab", "label": "Status", "name": "", "type": "tab", "placement": "top"},
+        {
+            "key": "field_booking_status",
+            "label": "Status",
+            "name": "status",
+            "type": "select",
+            "choices": {
+                "pending":     "In afwachting",
+                "paid":        "Betaald",
+                "confirmed":   "Bevestigd (cash)",
+                "canceled":    "Geannuleerd",
+                "expired":     "Verlopen",
+                "failed":      "Mislukt"
+            },
+            "default_value": "pending",
+            "return_format": "value",
+            "ui": 1
+        },
+
+        {"key": "field_booking_boat_tab", "label": "Boot & datums", "name": "", "type": "tab", "placement": "top"},
+        {
+            "key": "field_booking_boat_id",
+            "label": "Boot",
+            "name": "boat_id",
+            "type": "post_object",
+            "post_type": ["visboot"],
+            "return_format": "id",
+            "ui": 1,
+            "required": 1
+        },
+        {
+            "key": "field_booking_dates",
+            "label": "Datums (één per regel, format YYYY-MM-DD)",
+            "name": "dates",
+            "type": "textarea",
+            "instructions": "Bijv. 2026-07-15 op nieuwe regel 2026-07-16.",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_booking_slot_id",
+            "label": "Tijdsblok",
+            "name": "slot_id",
+            "type": "text",
+            "default_value": "full_day",
+            "placeholder": "full_day / morning / afternoon"
+        },
+
+        {"key": "field_booking_customer_tab", "label": "Klant", "name": "", "type": "tab", "placement": "top"},
+        {"key": "field_booking_first_name", "label": "Voornaam", "name": "first_name", "type": "text"},
+        {"key": "field_booking_last_name",  "label": "Achternaam", "name": "last_name",  "type": "text"},
+        {"key": "field_booking_email",      "label": "E-mail", "name": "email", "type": "email"},
+        {"key": "field_booking_phone",      "label": "Telefoon", "name": "phone", "type": "text"},
+        {"key": "field_booking_address",    "label": "Adres", "name": "address", "type": "text"},
+        {"key": "field_booking_postal_code","label": "Postcode", "name": "postal_code", "type": "text"},
+        {"key": "field_booking_city",       "label": "Plaats", "name": "city", "type": "text"},
+
+        {"key": "field_booking_payment_tab", "label": "Betaling", "name": "", "type": "tab", "placement": "top"},
+        {
+            "key": "field_booking_total",
+            "label": "Totaal (€)",
+            "name": "total",
+            "type": "number",
+            "step": "0.01",
+            "min": 0
+        },
+        {
+            "key": "field_booking_deposit_method",
+            "label": "Borg betaalmethode",
+            "name": "deposit_method",
+            "type": "select",
+            "choices": {"online": "Online (Mollie)", "cash": "Cash op locatie"},
+            "default_value": "cash",
+            "return_format": "value",
+            "ui": 1
+        },
+        {
+            "key": "field_booking_extras",
+            "label": "Extra opties",
+            "name": "extras",
+            "type": "textarea",
+            "instructions": "Eén per regel, bv. 'Hengelset'.",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_booking_mollie_payment_id",
+            "label": "Mollie payment ID",
+            "name": "mollie_payment_id",
+            "type": "text",
+            "instructions": "Alleen bij online betalingen."
+        },
+        {
+            "key": "field_booking_refund_due_date",
+            "label": "Borg refund datum",
+            "name": "refund_due_date",
+            "type": "date_picker",
+            "instructions": "Datum waarop de borg automatisch wordt teruggestort (laatste huurdag + 2 dagen).",
+            "display_format": "j F Y",
+            "return_format": "Y-m-d",
+            "first_day": 1
+        }
+    ],
+    "location": [
+        [{"param": "post_type", "operator": "==", "value": "booking"}]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1750000000
+}

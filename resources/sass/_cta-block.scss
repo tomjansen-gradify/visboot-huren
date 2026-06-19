@@ -1,0 +1,221 @@
+// ---------------------------------------------------------------------------
+// CTA block — "Ook genieten op het water?" — bg image, white floating cards
+// ---------------------------------------------------------------------------
+
+.cta-block {
+    background-color: #1e2d44;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: var(--pad-hero) 0;
+    position: relative;
+
+    &__container {
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__title {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: clamp(28px, 4vw, 52px);
+        font-weight: 500;
+        color: #ffffff;
+        line-height: 1.15;
+        margin: 0 auto 32px;
+        padding-bottom: 24px;
+        max-width: 720px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    &__subtitle {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.92);
+        margin: -16px auto 40px;
+        padding: 0;
+        max-width: 720px;
+    }
+
+    &__items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 8px;
+    }
+
+    &__item {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 28px 24px;
+        box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.25),
+                    0 4px 12px -4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        text-align: center;
+        min-height: 140px;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 22px 48px -16px rgba(0, 0, 0, 0.3),
+                        0 6px 14px -4px rgba(0, 0, 0, 0.12);
+        }
+    }
+
+    &__icon {
+        font-size: 28px;
+        color: #71BF44;
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        margin: 0;
+    }
+
+    &__item-text {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 1.35;
+        color: #1e2d44;
+        margin: 0;
+        padding: 0;
+
+        a {
+            color: #1e2d44;
+            text-decoration: none;
+            transition: color 0.15s ease;
+
+            &:hover {
+                color: #71BF44;
+            }
+        }
+    }
+
+    &__form-wrap {
+        margin-top: 48px;
+        max-width: 720px;
+        margin-inline: auto;
+    }
+
+    &__form-title {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: clamp(24px, 2.6vw, 30px);
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+        margin: 0 0 24px;
+        padding: 0;
+    }
+
+    &__form-success {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        color: #fff;
+        text-align: center;
+
+        i { font-size: 48px; color: #71BF44; }
+        p { margin: 0; font-size: 16px; }
+    }
+
+    @media (max-width: 768px) {
+        padding: var(--pad-hero) 0;
+
+        &__container { width: 90%; }
+
+        &__items {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        &__item {
+            min-height: 110px;
+            padding: 20px 20px;
+        }
+
+        &__form-wrap { margin-top: 32px; }
+    }
+}
+
+.cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+
+        &--two { grid-template-columns: 1fr 1fr; }
+    }
+
+    &__field {
+        display: block;
+
+        input, textarea {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            padding: 14px 16px;
+            border: 0;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.94);
+            color: #1e2d44;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background 0.15s ease, box-shadow 0.15s ease;
+
+            &::placeholder {
+                color: #94a3b8;
+                opacity: 1;
+            }
+
+            &:focus {
+                outline: none;
+                background: #fff;
+                box-shadow: 0 0 0 3px rgba(113, 191, 68, 0.3);
+            }
+        }
+        textarea { resize: vertical; min-height: 120px; }
+    }
+
+    &__submit {
+        align-self: flex-start;
+        background: #71BF44;
+        color: #fff;
+        border: 0;
+        padding: 14px 36px;
+        border-radius: 30px;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.15s ease, transform 0.15s ease;
+
+        &:hover { background: #5fa835; transform: translateY(-1px); }
+        &[disabled] { opacity: 0.5; cursor: not-allowed; }
+    }
+
+    @media (max-width: 600px) {
+        &__row--two { grid-template-columns: 1fr; }
+        &__submit { width: 100%; align-self: center; text-align: center; }
+    }
+}

@@ -1,0 +1,92 @@
+// Visboothuren theme styles
+
+:root {
+    --header-height: 132px;
+
+    // Section padding (top/bottom)
+    --pad-section:  56px;   // standard section padding
+    --pad-compact:  40px;   // tight section padding
+    --pad-hero:     80px;   // hero/cta-block padding
+
+    // Font sizes
+    --fs-h1:        clamp(28px, 4vw, 48px);
+    --fs-h2:        26px;
+    --fs-h3:        22px;
+    --fs-h4:        18px;
+    --fs-h5:        16px;
+    --fs-h6:        14px;
+    --fs-body:      14px;
+    --fs-small:     13px;
+    --fs-tiny:      12px;
+
+    // Color tokens
+    --c-dark:       #1e2d44;
+    --c-text:       #3E3E3F;
+    --c-muted:      #6b7280;
+    --c-accent:     #71BF44;
+    --c-accent-2:   #5fa835;
+    --c-line:       #e5e7eb;
+}
+
+@media (max-width: 980px) {
+    :root {
+        --header-height: 160px;
+        --pad-section:   40px;
+        --pad-compact:   32px;
+        --pad-hero:      56px;
+    }
+}
+
+@import 'header';
+@import 'hero-block';
+@import 'usp-block';
+@import 'boat-listing-block';
+@import 'single-visboot';
+@import 'visboot-detail';
+@import 'booking-wizard';
+@import 'page-header-block';
+@import 'image-text-block';
+@import 'contact';
+@import 'footer';
+@import 'text-block';
+@import 'cta-block';
+@import 'legal';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: calc(var(--header-height) + 16px);
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding-top: var(--header-height);
+    color: #3E3E3F;
+    font-size: 14px;
+    line-height: 1.7;
+    background-color: #fff;
+}
+
+a {
+    color: #2ea3f2;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1080px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}

@@ -66,6 +66,18 @@ class BookingService
             $errors[] = 'Ongeldige boot.';
         }
         if (empty($dates))   { $errors[] = 'Kies minimaal één datum.'; }
+        if (count($dates) > 1) {
+            $sorted = $dates;
+            sort($sorted);
+            $expected = strtotime($sorted[0]);
+            foreach ($sorted as $d) {
+                if (date('Y-m-d', $expected) !== $d) {
+                    $errors[] = 'De geselecteerde dagen moeten aaneengesloten zijn.';
+                    break;
+                }
+                $expected = strtotime('+1 day', $expected);
+            }
+        }
         if ($name === '' && ($first_name === '' || $last_name === '')) { $errors[] = 'Vul je voor- en achternaam in.'; }
         if (!is_email($email)) { $errors[] = 'Vul een geldig e-mailadres in.'; }
         if ($phone === '')     { $errors[] = 'Vul je telefoonnummer in.'; }

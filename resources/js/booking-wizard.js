@@ -147,8 +147,30 @@ class BookingWizard {
             btn.addEventListener('click', () => {
                 if (btn.disabled) return;
                 const key = btn.dataset.day;
-                if (this.state.dates.has(key)) this.state.dates.delete(key);
-                else this.state.dates.add(key);
+                const selected = [...this.state.dates].sort();
+
+                if (selected.length === 0) {
+                    this.state.dates.add(key);
+                } else if (this.state.dates.has(key)) {
+                    const first = selected[0];
+                    const last  = selected[selected.length - 1];
+                    if (key === first || key === last) {
+                        this.state.dates.delete(key);
+                    } else {
+                        this.state.dates.clear();
+                        this.state.dates.add(key);
+                    }
+                } else {
+                    const first = selected[0];
+                    const last  = selected[selected.length - 1];
+                    if (key === this._shiftYmd(first, -1) || key === this._shiftYmd(last, 1)) {
+                        this.state.dates.add(key);
+                    } else {
+                        this.state.dates.clear();
+                        this.state.dates.add(key);
+                    }
+                }
+
                 this.renderCalendar();
                 this.renderSlots();
                 this.updateNavState();
@@ -173,6 +195,13 @@ class BookingWizard {
 
     _monthDiff(a, b) {
         return (b.getFullYear() - a.getFullYear()) * 12 + (b.getMonth() - a.getMonth());
+    }
+
+    _shiftYmd(s, n) {
+        const d = parseYmd(s);
+        if (!d) return s;
+        d.setDate(d.getDate() + n);
+        return ymd(d);
     }
 
     renderSlots() {

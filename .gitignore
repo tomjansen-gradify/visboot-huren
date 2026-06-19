@@ -3,7 +3,6 @@ node_modules/
 vendor/
 
 # Build artifacts
-public/mix-manifest.json
 .cache/
 
 # Editor/OS

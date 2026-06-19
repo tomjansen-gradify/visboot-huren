@@ -31,19 +31,32 @@ class MixService
             return;
         }
 
+        $themeDir = get_template_directory();
         $themeUri = get_template_directory_uri() . '/public';
 
-        if (isset($manifest['/css/index.css'])) {
-            wp_register_style('theme-styling', $themeUri . $manifest['/css/index.css']);
+        $resolve = static function (string $key) use ($manifest, $themeDir, $themeUri): array {
+            if (!isset($manifest[$key])) {
+                return [null, null];
+            }
+            $relPath = strtok((string) $manifest[$key], '?');
+            $absPath = $themeDir . '/public' . $relPath;
+            $version = is_file($absPath) ? (string) filemtime($absPath) : null;
+            return [$themeUri . $relPath, $version];
+        };
+
+        [$cssUrl, $cssVer] = $resolve('/css/index.css');
+        if ($cssUrl) {
+            wp_register_style('theme-styling', $cssUrl, [], $cssVer);
             wp_enqueue_style('theme-styling');
         }
 
-        if (isset($manifest['/js/index.min.js'])) {
+        [$jsUrl, $jsVer] = $resolve('/js/index.min.js');
+        if ($jsUrl) {
             wp_register_script(
                 'theme-js',
-                $themeUri . $manifest['/js/index.min.js'],
+                $jsUrl,
                 ['jquery'],
-                null,
+                $jsVer,
                 ['in_footer' => true, 'strategy' => 'defer']
             );
             wp_enqueue_script('theme-js');
